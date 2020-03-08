@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Documents</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}" href="/css/bootstrap.min.css">
+</head>
+
+<body>
+
+<h1>Document add</h1>
+
+<a th:href="@{/documents}" href="/documents.html" class="btn btn-outline-secondary">home</a>
+
+<form action="/documents/add" method="post" th:object="${document}">
+    <span th:if="${#fields.hasErrors('description')}" th:errors="*{description}"></span>
+    <input class="form-control" type="text" name="description" th:field="*{description}" placeholder="Enter text">
+    <input type="submit" class="btn btn-outline-secondary" value="send">
+</form>
+
+<script th:src="@{/js/jquery-3.4.1.slim.min.js}" src="/js/jquery-3.4.1.slim.min.js"></script>
+<script th:src="@{/js/popper.min.js}" src="/js/popper.min.js"></script>
+<script th:src="@{/js/bootstrap.min.js}" src="/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
